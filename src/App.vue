@@ -62,8 +62,8 @@ export default {
     })
     var userData = {
         name: "A様",
-        temperature: 39,
-        mask_status: 1
+        temperature: 36,
+        mask_status: 0
       }
     this.$store.commit('setUserData', userData)
   }
@@ -78,5 +78,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.md-card {
+  height: 550px;
 }
 </style>

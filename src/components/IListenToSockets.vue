@@ -17,7 +17,7 @@ export default {
     }
   },
   created() {
-    this.socket.on('dataFromServer', (data) => {
+    this.socket.on('message', (data) => {
     console.log(data)
     })
   },
@@ -32,7 +32,7 @@ export default {
     },
 
     // Fired when the server sends something on the "messageChannel" channel.
-    dataFromServer(data) {
+    message(data) {
         console.log(data)
       this.socketMessage = data
     }
@@ -42,7 +42,7 @@ export default {
   methods: {
     pingServer() {
       // Send the "pingServer" event to the server.
-      this.$socket.emit('pingServer', 'PING from client')
+      this.$socket.send('PING from client')
     }
   }
 }
